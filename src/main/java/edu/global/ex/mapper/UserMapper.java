@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import edu.global.ex.vo.UserVO;
 
 @Mapper
+
 public interface UserMapper {
 
    public UserVO getUser(String username);   
