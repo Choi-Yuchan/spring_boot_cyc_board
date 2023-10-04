@@ -1,4 +1,4 @@
-package edu.global.ex.mapper;
+package edu.global.ex.service;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -11,30 +11,20 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @SpringBootTest
-class BoardMapperTest {
-	
+class BoardServiceImplTest {
+
 	@Autowired
-	private BoardMapper boardMapper;
+	private BoardService boardService;
 	
 	@Test
 	void testGetList() {
-		assertNotNull(boardMapper);
-
-		System.out.println(boardMapper.getList().size());
+		assertNotNull(boardService);
 		
-		for(BoardVO vo: boardMapper.getList()) {
-			log.info("Board" + vo);
+		System.out.println(boardService.getList().size());
+		
+		for (BoardVO board : boardService.getList()) {
+			log.info(board.toString());
 		}
-	}
-	
-	@Test
-	void testGetRead() {
-		assertNotNull(boardMapper);
-		
-		log.info("Board" + boardMapper.read(65));
-		
-		
-		
 	}
 
 }
